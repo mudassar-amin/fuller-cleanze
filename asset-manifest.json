@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fuller-cleanze/static/css/main.d80a02c1.css",
+    "main.js": "/fuller-cleanze/static/js/main.66662c4c.js",
+    "index.html": "/fuller-cleanze/index.html",
+    "main.d80a02c1.css.map": "/fuller-cleanze/static/css/main.d80a02c1.css.map",
+    "main.66662c4c.js.map": "/fuller-cleanze/static/js/main.66662c4c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d80a02c1.css",
+    "static/js/main.66662c4c.js"
+  ]
+}
