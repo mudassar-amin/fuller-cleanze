@@ -2,10 +2,9 @@
   "name": "fuller-cleanze",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mudassar-amin.github.io/fuller-cleanze",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
-    "homepage": "https://mudassar-amin.github.io/fuller-cleanze",
-
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.20",
@@ -19,6 +18,8 @@
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
