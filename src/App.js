@@ -1,6 +1,5 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Products from './components/Products';
@@ -9,7 +8,7 @@ import Layout from './components/Layout';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -18,7 +17,7 @@ function App() {
           <Route path="contactus" element={<ContactUs />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

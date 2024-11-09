@@ -1,4 +1,3 @@
-// src/pages/Home.js
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -23,14 +22,13 @@ const Home = () => {
       });
     }, options);
 
-    // Copy ref.current values to local variables
+    // Observe each section
     const hero = heroRef.current;
     const about = aboutRef.current;
     const benefits = benefitsRef.current;
     const products = productsRef.current;
     const cta = ctaRef.current;
 
-    // Observe each section
     if (hero) observer.observe(hero);
     if (about) observer.observe(about);
     if (benefits) observer.observe(benefits);
@@ -49,11 +47,17 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* Hero Section */}
+      {/* Hero Section with Banner Image Only */}
       <section
         ref={heroRef}
-        className="bg-gradient-to-r from-[#2A7F3C] via-[#B3864A] to-[#6B4E9A] h-96 flex flex-col items-center justify-center text-white text-center px-4"
+        className="bg-cover bg-center h-96"
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/img/Banner-FullerCleaz.jpg)` }}  // Update the banner image path
       >
+        {/* This section is now only the image, no text or content here */}
+      </section>
+
+      {/* Text and Call to Action Section */}
+      <section className="py-16 text-center px-4">
         <h1 className="text-5xl md:text-6xl font-bold mb-4">
           Welcome to Fuller Cleanze
         </h1>
@@ -101,65 +105,62 @@ const Home = () => {
         </div>
       </section>
 
-{/* Featured Products Section */}
-<section
-  ref={productsRef}
-  className="py-20 bg-gray-100 text-center px-4 transition-opacity duration-1000"
->
-  {/* Updated Heading */}
-  <h2 className="text-2xl md:text-3xl font-normal text-gray-800 mb-10 tracking-wide">
-    Our Featured Products
-  </h2>
+      {/* Featured Products Section */}
+      <section
+        ref={productsRef}
+        className="py-20 bg-gray-100 text-center px-4 transition-opacity duration-1000"
+      >
+        <h2 className="text-2xl md:text-3xl font-normal text-gray-800 mb-10 tracking-wide">
+          Our Featured Products
+        </h2>
 
-  {/* Horizontal Scrollable Product Container */}
-  <div className="flex space-x-6 overflow-x-auto md:overflow-visible md:justify-center px-4 py-6 scrollbar-hide">
-    <div className="product-item p-6 min-w-[250px] rounded-lg shadow-lg bg-white hover:bg-blue-100 transition-all duration-300">
-      <h3 className="text-lg font-semibold text-blue-600">Detox Tea</h3>
-      <p className="text-gray-600 mb-4">100% Organic, aids liver detox and relaxation.</p>
-      <Link to="/products" className="text-blue-600 font-semibold hover:underline">
-        Explore More
-      </Link>
-    </div>
-    <div className="product-item p-6 min-w-[250px] rounded-lg shadow-lg bg-white hover:bg-purple-100 transition-all duration-300">
-      <h3 className="text-lg font-semibold text-purple-600">Essential Oil</h3>
-      <p className="text-gray-600 mb-4">Relieves stress, skin irritation, and enhances mood.</p>
-      <Link to="/products" className="text-purple-600 font-semibold hover:underline">
-        Explore More
-      </Link>
-    </div>
-    <div className="product-item p-6 min-w-[250px] rounded-lg shadow-lg bg-white hover:bg-green-100 transition-all duration-300">
-      <h3 className="text-lg font-semibold text-green-600">Bath Salts</h3>
-      <p className="text-gray-600 mb-4">For body, mind, and spirit rejuvenation.</p>
-      <Link to="/products" className="text-green-600 font-semibold hover:underline">
-        Explore More
-      </Link>
-    </div>
-  </div>
-</section>
+        {/* Horizontal Scrollable Product Container */}
+        <div className="flex space-x-6 overflow-x-auto md:overflow-visible md:justify-center px-4 py-6 scrollbar-hide">
+          <div className="product-item p-6 min-w-[250px] rounded-lg shadow-lg bg-white hover:bg-blue-100 transition-all duration-300">
+            <h3 className="text-lg font-semibold text-blue-600">Detox Tea</h3>
+            <p className="text-gray-600 mb-4">100% Organic, aids liver detox and relaxation.</p>
+            <Link to="/products" className="text-blue-600 font-semibold hover:underline">
+              Explore More
+            </Link>
+          </div>
+          <div className="product-item p-6 min-w-[250px] rounded-lg shadow-lg bg-white hover:bg-purple-100 transition-all duration-300">
+            <h3 className="text-lg font-semibold text-purple-600">Essential Oil</h3>
+            <p className="text-gray-600 mb-4">Relieves stress, skin irritation, and enhances mood.</p>
+            <Link to="/products" className="text-purple-600 font-semibold hover:underline">
+              Explore More
+            </Link>
+          </div>
+          <div className="product-item p-6 min-w-[250px] rounded-lg shadow-lg bg-white hover:bg-green-100 transition-all duration-300">
+            <h3 className="text-lg font-semibold text-green-600">Bath Salts</h3>
+            <p className="text-gray-600 mb-4">For body, mind, and spirit rejuvenation.</p>
+            <Link to="/products" className="text-green-600 font-semibold hover:underline">
+              Explore More
+            </Link>
+          </div>
+        </div>
+      </section>
 
-
- {/* Call to Action Section */}
-<section
-  ref={ctaRef}
-  className="relative py-16 bg-gradient-to-r from-[#2A7F3C] via-[#B3864A] to-[#6B4E9A] text-white text-center transition-opacity duration-1000 overflow-hidden"
->
-  {/* CTA Content */}
-  <div className="relative z-10">
-    <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-      Ready to Start Your Wellness Journey?
-    </h2>
-    <p className="text-lg md:text-xl max-w-xl mx-auto mb-8 opacity-90">
-      Discover our range of organic, chemical-free products crafted to renew your mind, body, and spirit.
-    </p>
-    <Link
-      to="/products"
-      className="bg-white text-[#2A7F3C] hover:text-[#6B4E9A] px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 animate-bounce"
-    >
-      Shop Now
-    </Link>
-  </div>
-</section>
-
+      {/* Call to Action Section */}
+      <section
+        ref={ctaRef}
+        className="relative py-16 bg-gradient-to-r from-[#2A7F3C] via-[#B3864A] to-[#6B4E9A] text-white text-center transition-opacity duration-1000 overflow-hidden"
+      >
+        {/* CTA Content */}
+        <div className="relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+            Ready to Start Your Wellness Journey?
+          </h2>
+          <p className="text-lg md:text-xl max-w-xl mx-auto mb-8 opacity-90">
+            Discover our range of organic, chemical-free products crafted to renew your mind, body, and spirit.
+          </p>
+          <Link
+            to="/products"
+            className="bg-white text-[#2A7F3C] hover:text-[#6B4E9A] px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 animate-bounce"
+          >
+            Shop Now
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

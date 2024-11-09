@@ -17,7 +17,7 @@ const Layout = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
-              <img src="/img/Fuller Cleanze-TM.png" alt="Fuller Cleanze Logo" className="h-12" />
+              <img src={`${process.env.PUBLIC_URL}/img/Fuller Cleanze-TM.png`} alt="Fuller Cleanze Logo" className="h-12" />
             </Link>
           </div>
 
