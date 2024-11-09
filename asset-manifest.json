@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fuller-cleanze/static/css/main.d80a02c1.css",
-    "main.js": "/fuller-cleanze/static/js/main.11b797e7.js",
+    "main.css": "/fuller-cleanze/static/css/main.7f143e09.css",
+    "main.js": "/fuller-cleanze/static/js/main.17e4c4c9.js",
     "index.html": "/fuller-cleanze/index.html",
-    "main.d80a02c1.css.map": "/fuller-cleanze/static/css/main.d80a02c1.css.map",
-    "main.11b797e7.js.map": "/fuller-cleanze/static/js/main.11b797e7.js.map"
+    "main.7f143e09.css.map": "/fuller-cleanze/static/css/main.7f143e09.css.map",
+    "main.17e4c4c9.js.map": "/fuller-cleanze/static/js/main.17e4c4c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.d80a02c1.css",
-    "static/js/main.11b797e7.js"
+    "static/css/main.7f143e09.css",
+    "static/js/main.17e4c4c9.js"
   ]
 }
