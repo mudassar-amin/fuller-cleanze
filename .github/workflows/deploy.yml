@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Change to the branch you're using
 
 jobs:
   build-and-deploy:
@@ -16,10 +16,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'  # Update to the latest LTS version
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci  # Faster and more reliable than npm install
 
       - name: Build project
         run: npm run build
